@@ -36,20 +36,11 @@ CombatDamage Combat::getCombatDamage(Creature* creature, Creature* target) const
 			if (params.valueCallback) {
 				params.valueCallback->getMinMaxValues(player, damage, params.useCharges);
 			} else if (formulaType == COMBAT_FORMULA_LEVELMAGIC) {
-				Item* tool = player->getWeapon();
-				const Weapon* weapon = g_weapons().getWeapon(tool);
-				if (weapon) {
-					damage.primary.value = normal_random(
-						static_cast<int32_t>(minb),
-						static_cast<int32_t>(weapon->getWeaponDamage(player, target, tool, false) * maxa + maxb)
-					);
-				}else{
-					int32_t levelFormula = player->getLevel() * 2 + player->getMagicLevel() * 3;
-					damage.primary.value = normal_random(
-						static_cast<int32_t>(levelFormula * mina + minb),
-						static_cast<int32_t>(levelFormula * maxa + maxb)
-					);
-				}
+				int32_t levelFormula = player->getLevel() * 2 + player->getMagicLevel() * 3;
+				damage.primary.value = normal_random(
+					static_cast<int32_t>(levelFormula * mina + minb),
+					static_cast<int32_t>(levelFormula * maxa + maxb)
+				);
 			} else if (formulaType == COMBAT_FORMULA_SKILL) {
 				Item* tool = player->getWeapon();
 				const Weapon* weapon = g_weapons().getWeapon(tool);
