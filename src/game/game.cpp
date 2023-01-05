@@ -4513,10 +4513,10 @@ void Game::playerSetLootContainer(uint32_t playerId, ObjectCategory_t category, 
 	}
 
 	Container* container = thing->getContainer();
-	if (!container || (container->getID() == ITEM_GOLD_POUCH && category != OBJECTCATEGORY_GOLD)) {
-		player->sendCancelMessage(RETURNVALUE_NOTPOSSIBLE);
-		return;
-	}
+    if (!container || (container->getID() == ITEM_GOLD_POUCH && category == OBJECTCATEGORY_STASHRETRIEVE)) {
+        player->sendCancelMessage(RETURNVALUE_NOTPOSSIBLE);
+        return;
+    }
 
 	if (container->getHoldingPlayer() != player) {
 		player->sendCancelMessage("You must be holding the container to set it as a loot container.");
