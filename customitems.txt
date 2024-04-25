@@ -1,0 +1,20 @@
+custom itens
+
+	<item id="8155" article="a" name="heavily bound book">
+		<attribute key="primarytype" value="books"/>
+		<attribute key="description" value="It contains the scribings of many knowledgeable Tibians."/>
+		<attribute key="writeable" value="1"/>
+		<attribute key="maxtextlen" value="199"/>
+		<attribute key="weight" value="7800"/>
+
+
+	<item fromid="27845" toid="27846" article="a" name="Citizen Doll">
+		<attribute key="primarytype" value="dolls and bears"/>
+		<attribute key="description" value="This doll carries the story of all Tibians in their legendary citizen outfit. Awarded by TibiaTV.com.br"/>
+		<attribute key="weight" value="2200"/>
+	</item>
+
+
+	<item id="32920" name="silver cup">
+		<attribute key="primarytype" value="tournament rewards"/>
+	</item>
