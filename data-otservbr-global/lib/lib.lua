@@ -9,3 +9,6 @@ dofile(DATA_DIRECTORY .. "/lib/quests/quest.lua")
 
 -- Tables library
 dofile(DATA_DIRECTORY .. "/lib/tables/load.lua")
+
+-- Hunt Refiller
+dofile(DATA_DIRECTORY .. "/lib/others/hunt_refiller.lua")
